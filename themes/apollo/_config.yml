@@ -1,9 +1,9 @@
 menu:
-    Blog: /
+    Home: /
+    Classify: /classify/
     Archive: /archives/
-    Weibo: http://weibo.com/sunchongsheng
-    GitHub: https://github.com/pinggod
-    Rss: /atom.xml
+    App: /app/
+    GitHub: https://github.com/hellomafei
 
 favicon: /favicon.png
 logo: /favicon.png
@@ -18,4 +18,4 @@ duoshuo:
 # ga: UA-xxxxxxxx-x
 
 # Copyright Infomation
-startyear: 2015
+startyear: 2018

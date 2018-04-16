@@ -1,0 +1,46 @@
+---
+title: 建站过程(1) - Git nodejs npm hexo 环境搭建
+date: 2018-04-15 18:02:14
+tags:
+---
+
+　　如果你看了[《hexo 和 GitHub 结合部署静态网站》](http://127.0.0.1:4000/2018/04/15/%E5%BB%BA%E7%AB%99%E8%BF%87%E7%A8%8B-2-hexo-%E5%92%8C-GitHub-%E7%BB%93%E5%90%88%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/)，却苦于没有git、nodejs、npm、hexo环境，可以看此篇大致了解整个环境搭建的过程。
+
+<!--more-->
+
+<div class="tip">
+本文简述下所有依赖环境的安装。
+</div>
+
+#### <font color="#42B983">#</font> git
+
+- Git下载地址 [Git--fast-version-contro](https://git-scm.com/downloads)
+- 安装教程 [廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137396287703354d8c6c01c904c7d9ff056ae23da865a000)
+
+#### <font color="#42B983">#</font> nodejs
+
+- nodejs下载地址 [http://nodejs.cn/download/](http://nodejs.cn/download/)
+- nodejs安装教程 [Node.js 教程 | 菜鸟教程](http://www.runoob.com/nodejs/nodejs-install-setup.html)
+
+#### <font color="#42B983">#</font> npm
+
+- npm了解一下，[npm是什么？百度百科](https://baike.baidu.com/item/NPM/5515374?fr=aladdin)
+- nodejs安装也会安装上npm，不信的话你在命令行上输出npm -v试试？
+- npm是国外的服务器，有些人可能无法连接下载包模块。这里推荐[淘宝npm镜像](http://npm.taobao.org/)
+
+#### <font color="#42B983">#</font> hexo
+
+- [Hexo官网](https://hexo.io/) [Hexo中文网](https://hexo.io/zh-cn/)
+
+```
+$ npm install hexo-cli -g
+```
+
+#### <font color="#42B983">#</font> 不会还没学会吧？
+
+要不我在csdn给你找几篇教程？
+
+- [手把手教你用Hexo+Github 搭建属于自己的博客](https://blog.csdn.net/gdutxiaoxu/article/details/53576018)
+- [Git+Hexo搭建静态博客网站](https://blog.csdn.net/u011771755/article/details/48027307)
+- [使用github+Hexo人人都能拥有一个美美的博客](https://blog.csdn.net/working_harder/article/details/52437783)
+- ...

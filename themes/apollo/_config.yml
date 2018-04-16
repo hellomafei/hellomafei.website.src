@@ -1,6 +1,6 @@
 menu:
     Home: /
-    Classify: /classify/
+    Categories: /categories/
     Archive: /archives/
     App: /app/
     GitHub: https://github.com/hellomafei
@@ -19,3 +19,7 @@ duoshuo:
 
 # Copyright Infomation
 startyear: 2018
+
+# Category
+categories: /categories
+app: /app

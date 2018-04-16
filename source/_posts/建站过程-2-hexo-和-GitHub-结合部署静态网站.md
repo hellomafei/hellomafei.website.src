@@ -10,7 +10,7 @@ desc: Hexo+GitHub搭建个人博客
 <!--more-->
 
 <div class="tip">
-本文假设你的电脑上已经部署好了Git、nodejs、npm(&cnpm)和hexo-cli，会简单的使用GitHub
+本文假设你的电脑上已经部署好了Git、nodejs、npm(&cnpm)和hexo-cli，会简单的使用GitHub~
 </div>
 
 #### <font color="#42B983">#</font> GitHub 配置
@@ -44,57 +44,3 @@ deploy:
     repository: git@github.com:hellomafei/hellomafei.github.io.git
     branch: master
 ```
-
-#### <font color="#42B983">#</font> 测试
-
-```
-$ hexo new post "博客名"
-// 使用markdown语法改写 /source/_posts/博客名.md
-$ hexo g //生成静态文件
-$ hexo s //开启服务
-// http://localhost:4000/
-```
-
-#### <font color="#42B983">#</font> 发布
-
-- 测试文章写得不错 要生成静态网页并部署到hellomafei.github.io
-
-```
-$ hexo d -g
-```
-
-- 最后把hellomafei.website.src源码推送到远端
-
-```
-$ git init
-```
-
-- 使用Git Gui 将所有改动缓存 （这里我不知道知道git add怎么添加所有改动,如果没有Git Gui ##的话 推荐git add 一个一个加（git status查看改动））
-
-<div class="tip">
-这里千万不要用 git add . ，貌似会把node_modules也加进去，这个文件夹里面几十万个文件和文件夹！
-</div>
-
-```
-$ git commit -m "commit 信息"
-$ git remote add origin git@github.com:hellomafei/hellomafei.website.src.git
-$ git push -u origin master
-```
-
-#### <font color="#42B983">#</font> 换了电脑怎么做？
-
-- 克隆GitHub项目
-
-```
-$ git clone git@github.com:hellomafei/hellomafei.website.src.git
-```
-
-- 安装npm包模块
-
-```
-$ npm(&cnpm) install
-```
-
-- 测试
-
-- 发布

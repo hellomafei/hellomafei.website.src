@@ -8,7 +8,7 @@ subtitle:
 description: Horse Qt C++ Html Life Blog 
 keywords:
 author: Horse 
-language: 
+language: zh-cn
 timezone:
 
 # URL
@@ -74,7 +74,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: apollo
+theme: apollo  #horse
 
 # 在归档页面显示所有文章
 # 需要上面安装的 hexo-generator-archive 插件支持
@@ -86,7 +86,8 @@ archive_generator:
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
+# git@github.com:hellomafei/hellomafei.github.io.git
 deploy:
     type: git
-    repository: git@github.com:hellomafei/hellomafei.github.io.git
+    repository: https://github.com/hellomafei/hellomafei.github.io.git
     branch: master

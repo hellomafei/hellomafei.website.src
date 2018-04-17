@@ -3,6 +3,28 @@ ul.nav.nav-list
         li.nav-list-item
             - var re = /^(http|https):\/\/*/gi;
             - var tar = re.test(value) ? "_blank" : "_self"
-            - var act = !re.test(value) && "/"+page.current_url === value
+            - var act = !re.test(value)  && (url_for(page.path).replace("index.html","") === value)
             a.nav-list-link(class={active: act} href=url_for(value) target=tar)
                 != key.toUpperCase()
+
+                
+//- /g 全局匹配 global
+//- /i  不区分大小写 insensitive
+//- /gi 和/ig  就是/i 和/g的组合
+
+//- 正则表达式test函数： 该方法的返回值是布尔值，通过该值可以匹配字符串中是否存在于正则表达式相匹配的结果，
+//- 如果有匹配内容，返回ture，如果没有匹配内容返回false，该方法常用于判断用户输入数据的合法性，比如检验Email的合法性 
+
+//- _blank -- 在新窗口中打开链接
+//- _self -- 在当前窗体打开链接,此为默认值
+
+//- re.test(value) 的意思就是theme.menu后面的value如果是个完整的绝对路径链接返回true，否则返回false
+
+//- value                   = /             /categories/          /archives/            https://github.com/hellomafei
+//- key.toUpperCase()       = HORSE         CATEGORIES            ARCHIVE               GITHUB
+//- "/"+page.current_url    = /             /undefined            /archives/         //每次都一样   
+//- page.path               = /index.html   /categories/index.html ...   //每次都一样
+
+//- 
+//- 
+//- - var act = !re.test(value)  && ("/"+page.current_url === value)

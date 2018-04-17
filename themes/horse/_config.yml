@@ -1,12 +1,5 @@
 menu:
-    Home: /
-    Categories: /categories/
-    Archive: /archives/
-    App: /app/
+    Horse: /
+    Categories: /categories
+    Archive: /archives
     GitHub: https://github.com/hellomafei
-
-favicon: /favicon.png
-logo: /favicon.png
-
-# Copyright Infomation
-startyear: 2018

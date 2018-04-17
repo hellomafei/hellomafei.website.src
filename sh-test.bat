@@ -4,5 +4,5 @@ CALL hexo clean
 echo ------start generate--------
 CALL hexo g
 echo ------start server--------
-CALL hexo s
+CALL hexo server --debug
 pause

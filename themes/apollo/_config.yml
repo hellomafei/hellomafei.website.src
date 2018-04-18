@@ -1,8 +1,8 @@
 menu:
-    Horse: /
-    Categories: /categories/
-    Archive: /archives/
-    GitHub: https://github.com/hellomafei
+    HORSE: /
+    CATEGORIES: /categories/
+    ARCHIVES: /archives/
+    GITHUB: https://github.com/hellomafei
 
 favicon: /favicon.png
 logo: /favicon.png

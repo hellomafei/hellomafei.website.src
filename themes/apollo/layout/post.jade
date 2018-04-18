@@ -10,7 +10,7 @@ block description
 block container
     if page.title === "categories"
         .archive
-            - var posts1 = site.posts['data'];
+            //- - var posts1 = site.posts['data'];
             //- - for (var k in posts1)
             //-     p
             //-         != JSON.stringify(posts1[k]['title'])
@@ -41,8 +41,8 @@ block container
                         .post-item
                             .post-info
                                 != full_date(posts[k]['date'], 'YYYY-MM-DD')
-                        a.post-title-link(href= url_for(posts[k]['path']))
-                            != posts[k]['title']
+                            a.post-title-link(href= url_for(posts[k]['path']))
+                                != posts[k]['title']
     else if page.title === "app"
     else
         include mixins/post

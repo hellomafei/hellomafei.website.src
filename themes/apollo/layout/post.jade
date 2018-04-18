@@ -9,24 +9,40 @@ block description
 
 block container
     if page.title === "categories"
-        //- include mixins/post
-        //- +postArchivesList()
         .archive
-            h2
-                != JSON.stringify(site.pages)
+            - var posts1 = site.posts['data'];
+            //- - for (var k in posts1)
+            //-     p
+            //-         != JSON.stringify(posts1[k]['title'])
+            //- p -------------------------------------------------
+            //- - var posts2 = site.posts['data'];
+            //- - for (var k in posts2)
+            //-     p
+            //-         != date(posts2[k]['date'], 'YYYY-MM-DD')
+            //- p -------------------------------------------------
+            //- - var posts3 = site.posts['data'];
+            //- - for (var k in posts3)
+            //-     p
+            //-         != posts3[k]['categories']['data']['0']['name']
+            //- p -------------------------------------------------
+            //- - var posts4 = site.posts['data'];
+            //- - for (var k in posts4)
+            //-     p
+            //-         != posts3[k]['path']
+            //- p -------------------------------------------------
+
             - var categories = site.categories['data']
-            - for (var k in categories)
+            - for (var i in categories)
                 h2.archive-year
-                    != categories[k]['name']
-            //- - var categories = "other";
-            //- - var change = false;
-            //- - site.page.posts.each(function (item)) {
-            //-     - var itemCategories = item.categories + "";
-            //-     - change = categories !== itemCategories;
-            //-     - categories = change ? itemCategories : categories;
-            //-     if chage
-            //-         h2.archive-year!= categories
-            //- - })
+                    != categories[i]['name']
+                - var posts = site.posts['data']
+                - for (var k in posts)
+                    if categories[i]['name'] === posts[k]['categories']['data']['0']['name']
+                        .post-item
+                            .post-info
+                                != full_date(posts[k]['date'], 'YYYY-MM-DD')
+                        a.post-title-link(href= url_for(posts[k]['path']))
+                            != posts[k]['title']
     else if page.title === "app"
     else
         include mixins/post

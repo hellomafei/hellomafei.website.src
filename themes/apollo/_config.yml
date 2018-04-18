@@ -2,9 +2,16 @@ menu:
     HORSE: /
     CATEGORIES: /categories/
     ARCHIVES: /archives/
-    GITHUB: https://github.com/hellomafei
+    APP: /app/
 
 favicon: /favicon.png
 logo: /favicon.png
 
+disqus:
+duoshuo:
+
+copyname: mafei
+copynameurl: https:/hellomafei.github.io
+copygithuburl: https://github.com/hellomafei
+copyqq: 545521859
 startyear: 2018

@@ -8,8 +8,29 @@ block description
     meta(name="description", content=desc)
 
 block container
-    include mixins/post
-    +post(page)
+    if page.title === "categories"
+        //- include mixins/post
+        //- +postArchivesList()
+        .archive
+            h2
+                != JSON.stringify(site.pages)
+            - var categories = site.categories['data']
+            - for (var k in categories)
+                h2.archive-year
+                    != categories[k]['name']
+            //- - var categories = "other";
+            //- - var change = false;
+            //- - site.page.posts.each(function (item)) {
+            //-     - var itemCategories = item.categories + "";
+            //-     - change = categories !== itemCategories;
+            //-     - categories = change ? itemCategories : categories;
+            //-     if chage
+            //-         h2.archive-year!= categories
+            //- - })
+    else if page.title === "app"
+    else
+        include mixins/post
+        +post(page)
 
 block pagination
     include mixins/paginator

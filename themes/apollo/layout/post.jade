@@ -10,27 +10,6 @@ block description
 block container
     if page.title === "categories"
         .archive
-            //- - var posts1 = site.posts['data'];
-            //- - for (var k in posts1)
-            //-     p
-            //-         != JSON.stringify(posts1[k]['title'])
-            //- p -------------------------------------------------
-            //- - var posts2 = site.posts['data'];
-            //- - for (var k in posts2)
-            //-     p
-            //-         != date(posts2[k]['date'], 'YYYY-MM-DD')
-            //- p -------------------------------------------------
-            //- - var posts3 = site.posts['data'];
-            //- - for (var k in posts3)
-            //-     p
-            //-         != posts3[k]['categories']['data']['0']['name']
-            //- p -------------------------------------------------
-            //- - var posts4 = site.posts['data'];
-            //- - for (var k in posts4)
-            //-     p
-            //-         != posts3[k]['path']
-            //- p -------------------------------------------------
-
             - var categories = site.categories['data']
             - for (var i in categories)
                 h2.archive-year

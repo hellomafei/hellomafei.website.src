@@ -10,7 +10,7 @@
 
 ## Premise
 
-
+- Change your _config.yml "repository" to your user.Github.io's clone URL.
 - install nodejs
 - install npm
 - install hexo-cli
@@ -23,14 +23,22 @@ $ git clone git clone git@github.com:hellomafei/hellomafei.website.src.git
 $ cd hellomafei.website.src.git
 $ npm install
 ```
-## Quick Start
+
+## Test
 
 ``` bash
 $  hexo new post "Blog name"
 // write "Blog name.md"
-$  hexo d -g
+$  hexo clean
+$  hexo g
+$  hexo server --debug
 ```
 
-## Must
+## Deploy
 
-Change your _config.yml "repository" to your user.Github.io's clone URL.
+``` bash
+$  hexo new post "Blog name"
+// write "Blog name.md"
+$  hexo clean
+$  hexo d -g
+```

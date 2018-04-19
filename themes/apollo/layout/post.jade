@@ -22,7 +22,27 @@ block container
                                 != full_date(posts[k]['date'], 'YYYY-MM-DD')
                             a.post-title-link(href= url_for(posts[k]['path']))
                                 != posts[k]['title']
-    else if page.title === "app"
+    else if page.title === "app"　
+            .appheaderdiv
+                .appimgdiv
+                    a.applogo-link(href="https://github.com/hellomafei" target="_blank")
+                        img(src="app1.ico" alt="logo")
+                    a.appname(href="https://github.com/hellomafei" target="_blank") 马上有饭
+                .appinfodiv
+                    ul
+                        li 马上有饭马上有饭马上有饭马上有饭马上有饭马上有饭
+                        li 马上有饭马上有饭马上有饭马上有饭马上有饭马上有饭
+                        li 马上有饭马上有饭马上有饭马上有饭马上有饭马上有饭
+                        
+                    
+            //- .appheader
+            //-     a.applogo-link(href="https://github.com/hellomafei" target="_blank")
+            //-         img(src="app1.ico" alt="logo")
+            //-     a.appname-link(href="https://github.com/hellomafei" target="_blank")
+            //-         h2.appname XXXX平台XXXX预警系统
+            //-         h4.appgithub src: https://github.com/hellomafei
+            //- .appintroduce
+            //-     h3 jieshao
     else
         include mixins/post
         +post(page)

@@ -2,10 +2,12 @@ main.container {
     margin: 2em 10px;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 800px) {
     .wrap {
         width: 700px;
         margin: 0 auto;
+        padding-left: 50px;
+        padding-right: 50px;
     }
     header {
         padding: 20px 100px;

@@ -6,6 +6,8 @@
 
 ![Show Page 3](/img/showpage3.png)
 
+![Show Page 4](/img/showpage4.png)
+
 [Hexo](https://hexo.io/), a fast, simple & powerful blog framework, powered by [Node.js](http://nodejs.org).
 
 ## Premise

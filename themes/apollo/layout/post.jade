@@ -23,16 +23,26 @@ block container
                             a.post-title-link(href= url_for(posts[k]['path']))
                                 != posts[k]['title']
     else if page.title === "app"　
-            .appheaderdiv
-                .appimgdiv
-                    a.applogo-link(href="https://github.com/hellomafei" target="_blank")
+            .appdiv
+                .appdivchild
+                    a.applogo(href="https://github.com/hellomafei" target="_blank")
                         img(src="app1.ico" alt="logo")
-                    a.appname(href="https://github.com/hellomafei" target="_blank") 马上有饭
-                .appinfodiv
-                    ul
-                        li 马上有饭马上有饭马上有饭马上有饭马上有饭马上有饭
-                        li 马上有饭马上有饭马上有饭马上有饭马上有饭马上有饭
-                        li 马上有饭马上有饭马上有饭马上有饭马上有饭马上有饭
+                .appdivchild
+                    a.appname(href="https://github.com/hellomafei" target="_blank") app1name
+                .appdivchild
+                    li.appintroduction 功能简介1111111111111
+                    li.appintroduction 功能简介2222222222222
+                    li.appintroduction 功能简介3333333333333
+
+                //- .appimgdiv
+                //-     a.applogo-link(href="https://github.com/hellomafei" target="_blank")
+                //-         img(src="app1.ico" alt="logo")
+                //-     a.appname(href="https://github.com/hellomafei" target="_blank") 马上有饭
+                //- .appinfodiv
+                //-     ul
+                //-         li 马上有饭马上有饭马上有饭马上有饭马上有饭马上有饭
+                //-         li 马上有饭马上有饭马上有饭马上有饭马上有饭马上有饭
+                //-         li 马上有饭马上有饭马上有饭马上有饭马上有饭马上有饭
                         
                     
             //- .appheader

@@ -2,24 +2,42 @@
 //     background-color: chartreuse;
 // }
 
-.appheaderdiv {
-    width: auto;
-    padding-top: 100px;
-    padding-bottom: 200px;
-    background-color: blueviolet;
+// .appheaderdiv {
+//     width: auto;
+//     padding-top: 100px;
+//     padding-bottom: 200px;
+//     background-color: blueviolet;
+// }
+
+// .appimgdiv {
+//     width: 64px;
+//     height: 100px;
+//     float : left;
+//     text-align: center;
+//     background-color: lawngreen;
+// }
+
+// .appinfodiv {
+//     width: auto;
+//     height: 100px;
+//     display: inline-block;
+//     background-color: plum;
+// }
+
+.appdiv .appdivchild {
+    width: 100%;
+    text-align: center
 }
 
-.appimgdiv {
-    width: 64px;
-    height: 100px;
-    float : left;
+.appdiv {
+    margin-top: 50px;
+}
+
+.applogo .appname{
+    width: 100%;
     text-align: center;
-    background-color: lawngreen;
 }
 
-.appinfodiv {
-    width: auto;
-    height: 100px;
-    display: inline-block;
-    background-color: plum;
+.appintroduction {
+    list-style: none;
 }

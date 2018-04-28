@@ -94,7 +94,7 @@ void HsOpenGLWidget::resizeGL(int w, int h)
     qDebug() << qPrintable(glType) << qPrintable(glVersion) << "(" << qPrintable(glProfile) << ")";
 ```
 
-　　我通过打印发现我这里输出 “OpenGL 4.4.0 - Build 20.19.15.4300 ( CompatibilityProfile )”，我通过编译在我的小米5（Android 7.0）手机上发现，输出的是“···”，从这里可以知道，Qt将openg api···。如果我想规定使用 OpenGL 3.3 的话，我们需要在构造函数里添加如下代码。如果不更换环境的话，这可能是我们唯一测试以上输出版本的途径了。
+　　我通过打印发现我这里输出 “OpenGL 4.4.0 - Build 20.19.15.4300 ( CompatibilityProfile )”，我通过编译(什么鬼？Qt的项目还能编译在安卓上？是的你没有看错，如果有兴趣请看我的这篇博客···)在我的小米5（Android 7.0）手机上发现，输出的是“OpenGL ES 2.0 bulid 1.3···”，从这里可以知道，Qt将openg api封装的更适宜跨平台。如果我想规定使用 OpenGL 3.3 的话，我们需要在构造函数里添加如下代码。如果不更换环境的话，这可能是我们唯一测试以上输出版本的途径了。不过我不建议这么写，我没有必须使用3.3或者其他特定版本的需求。
 
 ```
     QSurfaceFormat format;

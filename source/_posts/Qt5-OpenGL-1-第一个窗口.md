@@ -25,7 +25,7 @@ QOpenGLFunctions *functions = QOpenGLContext::currentContext()->functions();
 functions->glFunctionHere();
 ```
 
-　　QOpenGLFunctions 默认为OpenGL ES 2.0的原因是出于兼容性原因，所以我们可以轻松地将产品移植到嵌入式平台（如Android和iOS）。我们的例子将使用这个函数上下文，但我们也可以要求特定的函数上下文（例如QOpenGLFunctions_4_3_Core）。除了OpenGL ES 2.0 API之外，我们没有任何需求，所以我将坚持使用QOpenGLFunctions 类。
+　　QOpenGLFunctions 默认为 OpenGL ES 2.0的原因是出于兼容性原因，所以我们可以轻松地将产品移植到嵌入式平台（如Android和iOS）。我们的例子将使用这个函数上下文，但我们也可以要求特定的函数上下文（例如QOpenGLFunctions_4_3_Core）。除了OpenGL ES 2.0 API之外，我们没有任何需求，所以我将坚持使用QOpenGLFunctions 类。
 
 ```
 class HsOpenGLWidget : public QOpenGLWidget, protected QOpenGLFunctions
@@ -43,7 +43,7 @@ protected:
 
 #### <font color="#42B983">#</font> 创建窗口
 
-　　我们只需要创建我们的类继承自 QOpenGLWidget 和 QOpenGLFunctions，并且重写以下三个虚函数。顾名思义，这三个函数分别起到初始化、绘制和检测窗体大小变化的功能。接下来我们试着实现这三个函数。
+　　我们只需要创建我们的类继承自 QOpenGLWidget 和 QOpenGLFunctions，并且重写以下三个虚函数。顾名思义，这三个函数分别起到OpenGL上下文执行初始化、绘制和检测窗体大小变化的功能。接下来我们试着实现这三个函数。
 
 ```
 void HsOpenGLWidget::initializeGL()
@@ -68,7 +68,7 @@ void HsOpenGLWidget::resizeGL(int w, int h)
 
 #### <font color="#42B983">#</font> 后话
 
-　　如果你想知道你的上下文使用的opengl是什么版本的话，你可以使用以下代码（本文代码由于过于简单，这里不再进行太多解释）：
+　　如果你想知道你的上下文使用的opengl是什么版本的话，你可以使用以下代码（本文代码由于过于简单，这里不再进行太多解释）。
 
 ```
     //print Context Information
@@ -92,4 +92,14 @@ void HsOpenGLWidget::resizeGL(int w, int h)
 
     // qPrintable() will print our QString w/o quotes around it.
     qDebug() << qPrintable(glType) << qPrintable(glVersion) << "(" << qPrintable(glProfile) << ")";
+```
+
+　　我通过打印发现我这里输出 “OpenGL 4.4.0 - Build 20.19.15.4300 ( CompatibilityProfile )”，我通过编译在我的小米5（Android 7.0）手机上发现，输出的是“···”，从这里可以知道，Qt将openg api···。如果我想规定使用 OpenGL 3.3 的话，我们需要在构造函数里添加如下代码。如果不更换环境的话，这可能是我们唯一测试以上输出版本的途径了。
+
+```
+    QSurfaceFormat format;
+    format.setRenderableType(QSurfaceFormat::OpenGL);
+    format.setProfile(QSurfaceFormat::CoreProfile);
+    format.setVersion(3,3);
+    this->setFormat(format);
 ```

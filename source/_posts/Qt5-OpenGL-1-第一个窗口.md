@@ -48,20 +48,28 @@ protected:
 ```
 void HsOpenGLWidget::initializeGL()
 {
-    //Initialize OpenGL Backend
+    // 初始化当前上下文的OpenGL函数
     initializeOpenGLFunctions();
 
-    // Set global information
+    // glClearColor函数是一个状态设置函数
+    // 设置 glClear 的时候的颜色值，本身不会进行任何 clear 操作
+    // 指定刷新颜色缓冲区时所用的颜色
+    // 作用是，防止缓冲区中原有的颜色信息影响本次绘图
     glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
 }
 
 void HsOpenGLWidget::paintGL()
 {
+    // glClear函数则是一个状态应用的函数
+    // 清除颜色缓冲区
     glClear(GL_COLOR_BUFFER_BIT);
 }
 
 void HsOpenGLWidget::resizeGL(int w, int h)
 {
+    //OpenGL幕后使用glViewport中定义的位置和宽高进行2D坐标的转换，将OpenGL中的位置坐标转换为你的屏幕坐标。
+    //例如，OpenGL中的坐标(-0.5, 0.5)有可能（最终）被映射为屏幕中的坐标(200,450)。
+    //注意，处理过的OpenGL坐标范围只为-1到1，因此我们事实上将(-1到1)范围内的坐标映射到(0, 800)和(0, 600)。
     glViewport(0, 0, w, h);
 }
 ```
@@ -94,7 +102,7 @@ void HsOpenGLWidget::resizeGL(int w, int h)
     qDebug() << qPrintable(glType) << qPrintable(glVersion) << "(" << qPrintable(glProfile) << ")";
 ```
 
-　　我通过打印发现我这里输出 “OpenGL 4.4.0 - Build 20.19.15.4300 ( CompatibilityProfile )”，我通过编译(什么鬼？Qt的项目还能编译在安卓上？是的你没有看错，如果有兴趣请看我的这篇博客 [Qt5.9.5搭建Android开发环境](https://hellomafei.github.io/2018/04/28/Qt5-9-5%E6%90%AD%E5%BB%BAAndroid%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/))在我的小米5（Android 7.0）手机上发现，输出的是“OpenGL ES 2.0 bulid 1.3···”，从这里可以知道，Qt将openg api封装的更适宜跨平台。如果我想规定使用 OpenGL 3.3 的话，我们需要在构造函数里添加如下代码。如果不更换环境的话，这可能是我们唯一测试以上输出版本的途径了。不过我不建议这么写，我没有必须使用3.3或者其他特定版本的需求。
+　　我通过打印发现我这里输出 “OpenGL 4.4.0 - Build 20.19.15.4300 ( CompatibilityProfile )”，我通过编译(什么鬼？Qt的项目还能编译在安卓上？是的你没有看错，如果有兴趣请看我的这篇博客 [Qt5.9.5搭建Android开发环境](https://hellomafei.github.io/2018/04/28/Qt5-9-5%E6%90%AD%E5%BB%BAAndroid%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/))在我的小米5（Android 7.0）手机上发现，输出的是“OpenGL ES 2.0 bulid 1.3···”，从这里可以知道，Qt将openg api封装的更适宜跨平台。如果我想规定使用 OpenGL 3.3 的话，我们需要在构造函数里添加如下代码。如果不更换环境的话，这可能是我们唯一测试以上输出版本的途径了。不过我不这么写，我没有必须使用3.3或者其他特定版本的需求。
 
 ```
     QSurfaceFormat format;

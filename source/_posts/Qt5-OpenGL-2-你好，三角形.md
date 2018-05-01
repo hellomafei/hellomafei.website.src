@@ -39,7 +39,7 @@ date: 2018-04-28 23:20:38
 
 　　最后我们为避免顶点的重复使用（渲染的多个图形有很多顶点重复），我们还要使用索引缓冲对象(Element Buffer Object，EBO，也叫Index Buffer Object，IBO)。和顶点缓冲对象一样，EBO也是一个缓冲，它专门储存索引，OpenGL 调用这些顶点的索引来决定该绘制哪个顶点。相应的，Qt 中的 QOpenGLBuffer 辅助类也能很好的处理所谓的索引绘制。
 
-　　往往你通过读一些 OpenGL 的教程很容易了解这个过程，对于不了解 Qt 的人用 Qt 封装的一系列 OpenGL API 来完成这个过程有些困难。不过我相信你认真研读过[learnopengl](http://learnopengl-cn.readthedocs.io/zh/latest/) 的《你好，三角形》教程后再来看这篇总结，然后找到一一对应的关系，最后再研究下我在 GitHub上的 test02_qopenglwidget 和 test03_qopenglwidget [源码](https://github.com/hellomafei/TestProjectAggregation/tree/master/qt5.9.5_test)，相信你肯定可以豁然开朗。
+　　往往你通过读一些 OpenGL 的教程很容易了解这个过程，对于不了解 Qt 的人用 Qt 封装的一系列 OpenGL API 来完成这个过程有些困难。不过我相信你认真研读过[learnopengl](http://learnopengl-cn.readthedocs.io/zh/latest/) 的《你好，三角形》教程后再来看这篇总结，然后找到一一对应的关系，最后再研究下我在 GitHub上的 test03_qopenglwidget 和 test04_qopenglwidget [源码](https://github.com/hellomafei/TestProjectAggregation/tree/master/qt5.9.5_test)，相信你肯定可以豁然开朗。
 
 #### <font color="#42B983">#</font> 扩展
 
